@@ -1,6 +1,6 @@
 #! /bin/bash
 
-RED='\033[1;31m'
+PURPLE='\033[1;31m'
 YELLOW='\033[1;33m'
 BLUE='\033[1;34m'
 GREEN='\033[1;32m'
@@ -79,7 +79,7 @@ read
 echo -e "${BLUE}Creating attempt.txt with a message ${GREEN}Pavel's Attempt${RESET}"
 echo -e "${YELLOW}HIT ENTER${RESET}"
 read
-echo "Pavel's Attempt" > attempt.txt
+echo "Bryce's Attempt" > attempt.txt
 sudo mv attempt.txt ./mymnt
 cd mymnt
 echo -e "${BLUE}Updated contents of mymnt${RESET}"
@@ -88,7 +88,7 @@ echo -e "${YELLOW}HIT ENTER${RESET}"
 read
 cd ..
 echo -e "${BLUE}We'll unmount the mymnt filesystem;"
-echo -e "${RED}please enter its path:${RESET}"
+echo -e "${PURPLE}please enter its path:${RESET}"
 read MyPATH
 sudo umount $MyPATH
 hexdump -C mega.img | less
@@ -123,7 +123,7 @@ echo "Wants=test1.target" >> test2.target
 sudo mv test?.target /etc/systemd/system/
 systemctl status test1.target test2.target
 echo -e "${BLUE}They're here, but not active. We'll activate ${GREEN}test2.target ${BLUE}and verify they are"
-echo -e "${RED}both${BLUE} active.${RESET}"
+echo -e "${PURPLE}both${BLUE} active.${RESET}"
 echo -e "${YELLOW}HIT ENTER${RESET}"
 read
 # Activating JUST test2, but thanks to the dependency, test1 gets activated as well:
@@ -139,6 +139,6 @@ cd /etc/systemd/system/
 sudo rm test1.target test2.target
 cd ~
 echo ""
-echo -e "${RED}T${GREEN}H${YELLOW}A${BLUE}N${RESET}K ${RED}Y${GREEN}O${YELLOW}U${BLUE}!${RESET}"
+echo -e "${Purple}T${GREEN}H${YELLOW}A${BLUE}N${RESET}K ${PURPLE}Y${GREEN}O${YELLOW}U${BLUE}!${RESET}"
 echo ""
 
